@@ -1,3 +1,6 @@
+
+/* Write a JavaScript program that takes a random number, and try guessing the numbers between 1 to 10.*/
+
 function guessNumberGame(){
     let randomNumber = Math.floor(Math.random() * 10) + 1;
     let guessNumber = parseInt(prompt("Guess a number between 1 to 10"));

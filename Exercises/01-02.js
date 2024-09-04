@@ -1,3 +1,7 @@
+
+/* Write a javascript program that converts temperature of celcius to fahrenheit and fahrenheit to celcius.*/
+
+
 function CelciusToFahrenheit(cels){
     return ((cels * 9) / 5) + 32;
 }
@@ -11,7 +15,7 @@ function convertCelciusToFahrenheit(){
 
     if(!isNaN(celsInput)){
         let fahrenheitOutput = CelciusToFahrenheit(celsInput);
-        alert(`The Temperature in Fahrenheit is : ${fahrenheitOutput.toFixed(2)} .`);
+        alert(`The Temperature in Fahrenheit is : ${fahrenheitOutput.toFixed(2)} .`); // tried using backticks and method toFixed() to fixed 2 decimal places.
     }
 }
 
