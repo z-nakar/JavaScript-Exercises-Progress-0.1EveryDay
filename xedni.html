@@ -27,24 +27,31 @@
         ];
 
 
-        //forEach
-        todos.forEach(function(items){
-            console.log(items);
-        });
+        // //forEach
+        // todos.forEach(function(items){
+        //     console.log(items);
+        // });
 
 
-        //map
-        const todosID = todos.map(function(items){
-            return items.id;
-        });
-        console.log(todosID);
-        //filter
+        // //map
+        // const todosID = todos.map(function(items){
+        //     return items.id;
+        // });
+        // console.log(todosID);
+        // //filter
 
-        const isCompletedTrue = todos.filter(function(items){
-            return items.isCompleted === true;
-        });
-        console.log(isCompletedTrue);
+        // const isCompletedTrue = todos.filter(function(items){
+        //     return items.isCompleted === true;
+        // });
+        // console.log(isCompletedTrue);
         
+        //better with function arrows //arrow functions
+        todos.forEach((items) => console.log(items));
+        const todoID = todos.map((items) => items.id);
+        const isCompletedTrue = todos.filter((items) => items.isCompleted === true);
+
+        console.log(todoID);
+        console.log(isCompletedTrue);
     </script>
 </body>
 </html>
