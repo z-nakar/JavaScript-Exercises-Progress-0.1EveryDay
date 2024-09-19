@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const todos = [
+        {
+            id: 1,
+            text: 'Take out trash',
+            isCompleted: true
+        },
+        {
+            id: 2,
+            text: 'Take down your boss',
+            isCompleted: true
+        },
+        {
+            id: 3,
+            text: 'Wash your hands',
+            isCompleted: false
+        }
+        ];
+
+
+        //forEach
+        todos.forEach(function(items){
+            console.log(items);
+        });
+
+
+        //map
+        const todosID = todos.map(function(items){
+            return items.id;
+        });
+        console.log(todosID);
+        //filter
+
+        const isCompletedTrue = todos.filter(function(items){
+            return items.isCompleted === true;
+        });
+        console.log(isCompletedTrue);
+        
+    </script>
+</body>
+</html>

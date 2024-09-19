@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+</head>
+<body>
+    <h1 id="list-msg">Grocery List</h1>
+    <ul id="Grocery">
+        <li class="name">Milk</li>
+        <li class="name">Bread</li>
+        <li class="name">Eggs</li>
+        <li class="name">Apples</li>
+        <li class="name">Carrots</li>
+    </ul>
+
+    <ul id="Grocery1">
+        <li class="name">Sandwich</li>
+        <li class="name1">Pineapple</li>
+        <li class="name2">Pen</li>
+        <li class="name3">Coffee</li>
+        <li class="name">Potattoes</li>
+    </ul>
+
+    <script>
+        console.warn("yow");
+        // var grocery = document.querySelectorAll('#Grocery .name');
+        // Array.from(grocery).forEach(function(items){
+        //    // console.log(items);
+
+
+        // var grocery1 = document.querySelectorAll('#Grocery1 .name');
+        
+        // Array.from(grocery1).forEach(function(items){ //return as array
+        //     console.log(items);
+        // }) 
+
+        // var grocery = document.getElementById("Grocery1").children[2].innerHTML = "Grapes";
+        
+        // var grocery1 = document.querySelector(".name1");
+        // grocery1.innerHTML = "String";
+
+
+        // var grocery2 = document.getElementsByClassName("name");
+        // grocery2[1].innerHTML  = "Integer";
+
+        
+        const text = " Menu";
+        const textMsg = document.getElementById("list-msg");
+
+        // textMsg.textContent += text === "" ? `Grocery Items` : text;
+        if(textMsg === ""){
+            textMsg.textContent = " items";
+        }else textMsg.textContent += text;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

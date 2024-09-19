@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>hello world!</p>
+
+    <button onclick="myFunction()">click</button>
+    
+    <script>
+      function myFunction(){
+        let ctr = prompt("Enter a number");
+
+        let result = "";
+        for (let i = 0; i < ctr.length; i++) {
+            let currentChar = ctr[i];
+            let nextChar = ctr[i + 1];
+
+            result += currentChar;
+            if (parseInt(currentChar) % 2 === 0) {
+                if (nextChar && parseInt(nextChar) % 2 === 0) {
+                    result += "-";
+                }
+            }
+        }
+
+        alert(result);
+
+      }
+      
+    </script>
+
+    
+</body>
+</html>
