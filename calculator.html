@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <input id="textbox" type="text" readonly/>
+    <button onclick="numberDisplay(1)">1</button>
+    <button onclick="numberDisplay(2)">2</button>
+    <button onclick="numberDisplay(3)">3</button>
+    <button onclick="numberDisplay(4)">4</button>
+    <button onclick="numberDisplay(5)">5</button>
+    <button onclick="numberDisplay(6)">6</button>
+    <button onclick="numberDisplay(7)">7</button>
+    <button onclick="numberDisplay(8)">8</button>
+    <button onclick="numberDisplay(9)">9</button>
+    <button onclick="numberDisplay(0)">0</button>
+    <button onclick="setOperator('+')">+</button>
+    <button onclick="setOperator('-')">-</button>
+    <button onclick="setOperator('/')">/</button>
+    <button onclick="setOperator('*')">x</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="clearDisplay()">Clear</button>
+
+    <script>
+        let display = document.getElementById('textbox');
+        let currentNo = '';
+        let prevsNo = '';
+        let operator = '';
+
+        function numberDisplay(x) {
+            currentNo += x; 
+            display.value = currentNo;
+        }
+
+        function setOperator(op) {
+            if (currentNo === '') return; 
+            operator = op;
+            prevsNo = currentNo; 
+            currentNo = ''; 
+            display.value = '';
+           
+            
+
+        }
+
+        function calculate() {
+            if (operator === '' || currentNo === '') return; 
+
+            let result = 0;
+            switch (operator) {
+                case '+':
+                    result = prevsNo +currentNo;
+                    break;
+                case '-':
+                    result = prevsNo - currentNo;
+                    break;
+                case '*':
+                    result = prevsNo * currentNo;
+                    break;
+                case '/':
+                    result = prevsNo / currentNo;
+                    break;
+                default:
+                    return;
+            }
+            display.value = result;
+            currentNo = result.toString();
+            prevsNo = '';
+            operator = '';
+        }
+
+        function clearDisplay() {
+            currentNo = '';
+            prevsNo = '';
+            operator = '';
+            display.value = '';
+        }
+    </script>
+</body>
+</html>
