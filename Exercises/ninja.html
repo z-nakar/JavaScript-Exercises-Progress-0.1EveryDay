@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    
+
+
+
+<p>Convert Celcius to Fahrenheit</p>
+<input id="result-fah"></html>
+<button onclick="convertCelciusToFahrenheit()">Convert</button>
+
+
+
+<p>Convert Fahrenheit to Celcius</p>
+<input id="result-cel"></input>
+<button onclick="convertFahrenheitToCelcius()">Convert</button>
+
+
+
+<script>
+let celtofah = document.getElementById("result-fah");
+let fahtocel = document.getElementById("result-cel");
+
+function convertCelciusToFahrenheit(){
+    let celsInput = celtofah.value;
+    celsInput !== "" ? alert(`The Temperature in Celsius is: ${(((celsInput * 9) /5) +32).toFixed(2)}.`) : alert("Please enter a number before converting!");
+}
+function convertFahrenheitToCelcius(){
+    let fahInput = fahtocel.value;
+    fahInput !== "" ? alert(`The Temperature in Celsius is: ${((fahInput - 32) * 5/9).toFixed(2)}.`) : alert("Please enter a number before converting!");
+}
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
+

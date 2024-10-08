@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guessing Game</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #bba7db;
+        }
+        .container {
+            max-width: fit-content;
+            padding: 20px;
+            background-color: #39e75f;
+            text-align: center;
+        }
+        .button {
+            padding: 10px;
+            background-color: green;
+            color: rgb(211, 33, 33);
+            cursor: pointer;
+        }
+
+
+        .container-p, button{
+            font-size: 40px;
+            color:white; 
+        }
+
+    </style>
 </head>
 <body>
-  
-   <p>Guess A Number Game!</p>
-   <button onclick="guessNumberGame()">Wanna try your luck?</button>
+  <div class="container">
+    <p class="container-p">Guess A Number Game!</p>
+    <button class="button" onclick="guessNumberGame()">Wanna try your luck?</button>
+  </div>
 
    <script src="01-01.js"></script>
 </body>

@@ -4,26 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            background-color: #1b1b1b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #textbox {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: right;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+            font-size: 1.5em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #3e8e41;
+        }
+
+        button.operator {
+            background-color: #f39c12;
+        }
+
+        button.operator:hover {
+            background-color: #e67e22;
+        }
+
+        button.operator:active {
+            background-color: #d35400;
+        }
+
+        button.clear {
+            background-color: #e74c3c;
+        }
+
+        button.clear:hover {
+            background-color: #c0392b;
+        }
+
+        button.clear:active {
+            background-color: #a93226;
+        }
+    </style>
 </head>
 <body>
     
-    <input id="textbox" type="text" readonly/>
-    <button onclick="numberDisplay(1)">1</button>
-    <button onclick="numberDisplay(2)">2</button>
-    <button onclick="numberDisplay(3)">3</button>
-    <button onclick="numberDisplay(4)">4</button>
-    <button onclick="numberDisplay(5)">5</button>
-    <button onclick="numberDisplay(6)">6</button>
-    <button onclick="numberDisplay(7)">7</button>
-    <button onclick="numberDisplay(8)">8</button>
-    <button onclick="numberDisplay(9)">9</button>
-    <button onclick="numberDisplay(0)">0</button>
-    <button onclick="setOperator('+')">+</button>
-    <button onclick="setOperator('-')">-</button>
-    <button onclick="setOperator('/')">/</button>
-    <button onclick="setOperator('*')">x</button>
-    <button onclick="calculate()">=</button>
-    <button onclick="clearDisplay()">Clear</button>
+    <div class="calculator">
+        <input id="textbox" type="text" readonly/>
+        <div>
+            <button onclick="numberDisplay(1)">1</button>
+            <button onclick="numberDisplay(2)">2</button>
+            <button onclick="numberDisplay(3)">3</button>
+        </div>
+        <div>
+            <button onclick="numberDisplay(4)">4</button>
+            <button onclick="numberDisplay(5)">5</button>
+            <button onclick="numberDisplay(6)">6</button>
+        </div>
+        <div>
+            <button onclick="numberDisplay(7)">7</button>
+            <button onclick="numberDisplay(8)">8</button>
+            <button onclick="numberDisplay(9)">9</button>
+        </div>
+        <div>
+            <button onclick="setOperator('+')" class="operator">+</button>
+            <button onclick="numberDisplay(0)">0</button>
+            <button onclick="setOperator('-')" class="operator">-</button>
+        </div>
+        <div>
+            <button onclick="setOperator('/')">/</button>
+            <button onclick="setOperator('*')" class="operator">x</button>
+            <button onclick="calculate()">=</button>
+        </div>
+        <button onclick="clearDisplay()" class="clear">Clear</button>
+    </div>
 
     <script>
         let display = document.getElementById('textbox');
@@ -42,27 +130,27 @@
             prevsNo = currentNo; 
             currentNo = ''; 
             display.value = '';
-           
-            
-
         }
 
         function calculate() {
             if (operator === '' || currentNo === '') return; 
 
             let result = 0;
+            let prev = parseFloat(prevsNo);
+            let curr = parseFloat(currentNo);
+
             switch (operator) {
                 case '+':
-                    result = prevsNo +currentNo;
+                    result = prev + curr;
                     break;
                 case '-':
-                    result = prevsNo - currentNo;
+                    result = prev - curr;
                     break;
                 case '*':
-                    result = prevsNo * currentNo;
+                    result = prev * curr;
                     break;
                 case '/':
-                    result = prevsNo / currentNo;
+                    result = prev / curr;
                     break;
                 default:
                     return;
@@ -80,5 +168,6 @@
             display.value = '';
         }
     </script>
+
 </body>
 </html>
